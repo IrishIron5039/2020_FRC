@@ -1,0 +1,4 @@
+See file:///C:/Users/Robotics/Documents/VisualStudio/2020RobotCode%20-%20Pt%201/build/tmp/linkFrcUserProgramDebugExecutable/output.txt for all output for linkFrcUserProgramDebugExecutable.
+linking frcUserProgram successful.
+
+Finished linkFrcUserProgramDebugExecutable, see full log file:///C:/Users/Robotics/Documents/VisualStudio/2020RobotCode%20-%20Pt%201/build/tmp/linkFrcUserProgramDebugExecutable/output.txt.

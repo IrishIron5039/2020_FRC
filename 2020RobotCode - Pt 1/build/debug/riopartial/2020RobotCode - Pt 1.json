@@ -1,0 +1,9 @@
+[
+  {
+    "artifact": "frcCpp (in project 2020RobotCode - Pt 1)",
+    "target": "roborio",
+    "component": "frcUserProgram",
+    "debugfile": "frcCpp_roborio.debugconfig",
+    "language": "cpp"
+  }
+]
