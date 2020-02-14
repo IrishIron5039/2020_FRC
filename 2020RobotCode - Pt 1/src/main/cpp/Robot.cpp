@@ -42,10 +42,10 @@ public:
 	frc::ADXRS450_Gyro *gyro = new frc::ADXRS450_Gyro();
 	
 	WPI_TalonSRX *left = new WPI_TalonSRX(0); 
-	WPI_TalonSRX *right = new WPI_TalonSRX(1); 
-	WPI_TalonSRX *leftFollower = new WPI_TalonSRX(2); 
-	WPI_TalonSRX *rightFollower = new WPI_TalonSRX(3); 
-	WPI_TalonSRX *leftFollower2 = new WPI_TalonSRX(4); 
+	WPI_TalonSRX *leftFollower = new WPI_TalonSRX(1);
+	WPI_TalonSRX *leftFollower2 = new WPI_TalonSRX(2);  
+	WPI_TalonSRX *right = new WPI_TalonSRX(3); 
+	WPI_TalonSRX *rightFollower = new WPI_TalonSRX(4); 
 	WPI_TalonSRX *rightFollower2 = new WPI_TalonSRX(5);
 	WPI_TalonSRX *elevator = new WPI_TalonSRX(6); 
 	WPI_TalonSRX *elevator2 = new WPI_TalonSRX(7); 
@@ -144,16 +144,20 @@ void AutonomousPeriodic() {
 		drive->ArcadeDrive(joy->GetY(), -joy->GetX(), true);
 		if(gamePad->GetRawButton(5)){
 			if(!(elevator->GetSensorCollection().GetPulseWidthPosition() < lowestElevatorPosition)){
-				elevator->Set (-0.5);
+				elevator->Set (-0.25);
 			}
+			else elevator->Set (0);
 		}
 		else if(gamePad->GetRawButton(6)){
 			if(!(elevator->GetSensorCollection().GetPulseWidthPosition() > highestElevatorPosition)){
-				elevator->Set (0.5);
+				elevator->Set (0.25);
 			}
+			else elevator->Set (0);
 		}
-		elevator->Set (0.5 * (gamePad->GetRawButton(5)-gamePad->GetRawButton(6)));
-		std::cout << "GetPulseWidthPosition: " << elevator->GetSensorCollection().GetPulseWidthPosition() << "\n";
+		//elevator->Set (0.5 * (gamePad->GetRawButton(5)-gamePad->GetRawButton(6)));
+		//std::cout << "GetPulseWidthPosition: " << elevator->GetSensorCollection().GetPulseWidthPosition() << "\n";
+		std::cout << "Left: " << left->GetSensorCollection().GetPulseWidthPosition() << "\n";
+		std::cout << "Right: " << right->GetSensorCollection().GetPulseWidthPosition() << "\n";
 		
 		if (joy->GetRawButton(1)) changeWheelSpeed.Set(frc::DoubleSolenoid::Value::kReverse);
 		
