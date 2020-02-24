@@ -74,17 +74,65 @@ class Robot : public frc::IterativeRobot {
 
 	void RobotInit() {
 
+		left->ConfigPeakCurrentLimit(35,10);
+		left->ConfigPeakCurrentDuration(200,10);
+		left->ConfigContinuousCurrentLimit(30, 10);
+		left->EnableCurrentLimit(true);
+
+		leftFollower->ConfigPeakCurrentLimit(35,10);
+		leftFollower->ConfigPeakCurrentDuration(200,10);
+		leftFollower->ConfigContinuousCurrentLimit(30, 10);
+		leftFollower->EnableCurrentLimit(true);
+
+		leftFollower2->ConfigPeakCurrentLimit(35,10);
+		leftFollower2->ConfigPeakCurrentDuration(200,10);
+		leftFollower2->ConfigContinuousCurrentLimit(30, 10);
+		leftFollower2->EnableCurrentLimit(true);
+
+		right->ConfigPeakCurrentLimit(35,10);
+		right->ConfigPeakCurrentDuration(200,10);
+		right->ConfigContinuousCurrentLimit(30, 10);
+		right->EnableCurrentLimit(true);
+
+		rightFollower->ConfigPeakCurrentLimit(35,10);
+		rightFollower->ConfigPeakCurrentDuration(200,10);
+		rightFollower->ConfigContinuousCurrentLimit(30, 10);
+		rightFollower->EnableCurrentLimit(true);
+
+		rightFollower2->ConfigPeakCurrentLimit(35,10);
+		rightFollower2->ConfigPeakCurrentDuration(200,10);
+		rightFollower2->ConfigContinuousCurrentLimit(30, 10);
+		rightFollower2->EnableCurrentLimit(true);
+
+		elevator->ConfigPeakCurrentLimit(15,10);
+		elevator->ConfigPeakCurrentDuration(200,10);
+		elevator->ConfigContinuousCurrentLimit(13, 10);
+		elevator->EnableCurrentLimit(true);
+
+		elevator2->ConfigPeakCurrentLimit(15,10);
+		elevator2->ConfigPeakCurrentDuration(200,10);
+		elevator2->ConfigContinuousCurrentLimit(13, 10);
+		elevator2->EnableCurrentLimit(true);
+
+		intakeBalls->ConfigPeakCurrentLimit(15,10);
+		intakeBalls->ConfigPeakCurrentDuration(200,10);
+		intakeBalls->ConfigContinuousCurrentLimit(13, 10);
+		intakeBalls->EnableCurrentLimit(true);
+
+		ballWrist->ConfigPeakCurrentLimit(15,10);
+		ballWrist->ConfigPeakCurrentDuration(200,10);
+		ballWrist->ConfigContinuousCurrentLimit(13, 10);
+		ballWrist->EnableCurrentLimit(true);
+
+		controlPanelSpin->ConfigPeakCurrentLimit(15,10);
+		controlPanelSpin->ConfigPeakCurrentDuration(200,10);
+		controlPanelSpin->ConfigContinuousCurrentLimit(13, 10);
+		controlPanelSpin->EnableCurrentLimit(true);
+
 		cs::UsbCamera camera = frc::CameraServer::GetInstance()->StartAutomaticCapture();
 		cs::UsbCamera camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture();
 		camera.SetResolution(320,240);
 		camera2.SetResolution(320,240);
-
-		left->SetInverted(false);
-		right->SetInverted(false);
-		leftFollower->SetInverted(false);
-		rightFollower->SetInverted(false);
-		leftFollower2->SetInverted(false);
-		rightFollower2->SetInverted(false);
 		
 		
 
